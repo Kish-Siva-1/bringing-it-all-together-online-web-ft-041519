@@ -38,7 +38,6 @@ class Dog
     else 
       sql = <<-SQL
         UPDATE dogs SET name = ? WHERE id = ? 
-        VALUES (?, ?)
       SQL
       dog = DB[:conn].execute(sql, self.name, self.id)
       dog
