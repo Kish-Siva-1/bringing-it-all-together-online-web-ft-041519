@@ -45,7 +45,9 @@ class Dog
   
   def self.create(name:, breed:)
     #binding.pry
-    self.new(name: name, breed: breed)
+    dog = self.new(name: name, breed: breed)
+    binding.pry
+    dog.save
   end 
   
   def self.find_by_id 
