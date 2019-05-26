@@ -27,7 +27,7 @@ class Dog
   end 
   
   def save
-    
+    if 
   end 
   
   def self.create
