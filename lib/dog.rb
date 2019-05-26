@@ -27,14 +27,22 @@ class Dog
   end 
   
   def save
+    if !@id 
       sql = <<-SQL
         INSERT INTO dogs (name, breed)
         VALUES (?, ?)
       SQL
-      binding.pry
       dog = DB[:conn].execute(sql, self.name, self.breed) 
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       dog
+    else 
+      sql = <<-SQL
+        UPDATE dogs (name, breed)
+        VALUES (?, ?)
+      SQL
+      dog = DB[:conn].execute(sql, self.name, self.breed)
+      dog
+    end 
       binding.pry
   end 
   
