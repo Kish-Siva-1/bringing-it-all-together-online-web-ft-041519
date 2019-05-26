@@ -60,6 +60,7 @@ class Dog
     else 
       dog = Dog.create(name: name, breed: breed)
       dog.save
+      dog
     end
   end 
   
