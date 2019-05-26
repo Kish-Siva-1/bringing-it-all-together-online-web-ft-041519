@@ -42,7 +42,6 @@ class Dog
       dog = DB[:conn].execute(sql, self.name, self.breed, self.id)
       dog
     end 
-      binding.pry
   end 
   
   def self.create
