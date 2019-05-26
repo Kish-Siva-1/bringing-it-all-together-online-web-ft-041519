@@ -34,9 +34,7 @@ class Dog
       SQL
    
       DB[:conn].execute(sql, self.name, self.breed) 
-    else 
-      
-    end 
+    end  
   end 
   
   def self.create
