@@ -49,9 +49,9 @@ class Dog
   end 
   
   def self.find_by_id(id) 
-    sql = "UPDATE dogs SET name='Hello' WHERE name = ?"
+    sql = "UPDATE dogs SET name=? WHERE name = ?"
  
-    DB[:conn].execute(sql, hello.name,self.id)
+    DB[:conn].execute(sql, self.name, self.id)
   end 
   
   def self.find_or_create_by
