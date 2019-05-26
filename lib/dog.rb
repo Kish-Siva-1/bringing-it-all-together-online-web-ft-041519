@@ -28,6 +28,15 @@ class Dog
   
   def save
     if 
+      sql = <<-SQL
+        INSERT INTO dogs (name, breed)
+        VALUES (?, ?)
+      SQL
+   
+      DB[:conn].execute(sql, self.name, self.breed) 
+    else 
+      
+    end 
   end 
   
   def self.create
