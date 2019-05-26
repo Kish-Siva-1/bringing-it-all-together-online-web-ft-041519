@@ -55,7 +55,7 @@ class Dog
   end 
   
   def self.find_or_create_by(name: ,breed:)
-    if !@id 
+    if find_by_id(id) 
       sql = <<-SQL
         INSERT INTO dogs (name, breed)
         VALUES (?, ?)
