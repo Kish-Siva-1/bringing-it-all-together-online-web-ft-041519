@@ -55,7 +55,9 @@ class Dog
   end 
   
   def self.find_or_create_by(name: ,breed:)
-    
+    self.find_by_id(id)
+    dog = self.new(name: name, breed: breed)
+    dog.save
   end 
   
   def self.new_from_db
