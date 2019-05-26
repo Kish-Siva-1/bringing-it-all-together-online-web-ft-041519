@@ -55,7 +55,6 @@ class Dog
   end 
   
   def self.find_or_create_by(name:, breed:)
-    binding.pry
     if !@id 
       Dog.create(name: name, breed: breed)
     else 
