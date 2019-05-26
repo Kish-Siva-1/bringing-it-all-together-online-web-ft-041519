@@ -56,12 +56,8 @@ class Dog
   
   def self.find_or_create_by(name: ,breed:)
     if find_by_id(id) 
-      sql = <<-SQL
-        INSERT INTO dogs (name, breed)
-        VALUES (?, ?)
-      SQL
-      dog = DB[:conn].execute(sql, self.name, self.breed) 
-      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
+      find_by_id(id)
+      
     else 
       sql = <<-SQL
         UPDATE dogs SET name = ?, breed = ? WHERE id = ? 
