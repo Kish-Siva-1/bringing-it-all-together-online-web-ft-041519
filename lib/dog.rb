@@ -49,7 +49,7 @@ class Dog
   end 
   
   def self.find_by_id(id) 
-    sql = "UPDATE dogs SET name=? WHERE name = ?"
+    sql = "SELECT * FROM dogs WHERE id = ?"
  
     DB[:conn].execute(sql, self.name, self.id)
   end 
