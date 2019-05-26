@@ -58,12 +58,9 @@ class Dog
     if !@id 
       Dog.create(name: name, breed: breed)
     else 
-      
+      dog = Dog.create(name: name, breed: breed)
+      dog.save
     end
-      
-    dog = self.find_by_id(id)
-    dog = self.new(name: name, breed: breed)
-    dog.save
   end 
   
   def self.new_from_db
