@@ -51,7 +51,7 @@ class Dog
   def self.find_by_id(id) 
     sql = "SELECT * FROM dogs WHERE id = ?"
     binding.pry
-    result = DB[:conn].execute(sql, self.id)[0]
+    result = DB[:conn].execute(sql, id)[0]
     binding.pry
     #Dogs.new(result[0], result[1], result[2])
   end 
