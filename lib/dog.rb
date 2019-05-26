@@ -34,14 +34,13 @@ class Dog
       SQL
       dog = DB[:conn].execute(sql, self.name, self.breed) 
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
-      dog
     else 
       sql = <<-SQL
         UPDATE dogs SET name = ?, breed = ? WHERE id = ? 
       SQL
       dog = DB[:conn].execute(sql, self.name, self.breed, self.id)
-      dog
     end 
+    self 
   end 
   
   def self.create
