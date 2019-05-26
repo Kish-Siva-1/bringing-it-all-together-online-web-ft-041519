@@ -54,9 +54,9 @@ class Dog
     Dog.new(id: result[0], name: result[1], breed: result[2])
   end 
   
-  def self.find_or_create_by(name: ,breed:)
-    if find_by_id(id) 
-      find_by_id(id)
+  def self.find_or_create_by(name:, breed:)
+    if !@id 
+      Dog.create(name: name, breed: breed)
     else 
       
     end
