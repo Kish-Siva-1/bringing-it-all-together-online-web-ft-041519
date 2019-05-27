@@ -58,6 +58,7 @@ class Dog
       sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
       result = DB[:conn].execute(sql, name, breed)[0]
       dog = Dog.new(id: result[0], name: result[1], breed: result[2])
+      binding.pry
   end 
   
   def self.new_from_db
